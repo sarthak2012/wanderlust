@@ -76,11 +76,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//base
-// base route
-// app.get("/", (req, res) => {
-//   res.send("Hello, I am root route");
-// });
+// base route - redirect home to listings
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 //flash local middleware
 app.use((req, res, next) => {
